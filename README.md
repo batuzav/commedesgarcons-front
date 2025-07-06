@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio One-Page
 
-## Getting Started
+Un portafolio moderno y minimalista inspirado en diseños tipográficos, perfecto para desarrolladores y creativos.
 
-First, run the development server:
+## 🎨 Características
+
+- **Diseño One-Page**: Toda la información en una sola página
+- **Responsive**: Se adapta perfectamente a desktop y móvil
+- **Animaciones**: Transiciones suaves con Framer Motion
+- **Fácil personalización**: Contenido estructurado y editable
+- **Tipografía moderna**: Diseño inspirado en revistas de moda
+- **Performance**: Optimizado con Next.js 15
+
+## 🚀 Instalación
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Personalización
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Editar contenido
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El contenido se encuentra en `src/app/data/content.ts`. Puedes modificar:
 
-## Learn More
+```typescript
+export const portfolioContent = {
+  // Título principal (aparece en diagonal)
+  mainTitle: "TU NOMBRE",
+  
+  // Subtítulo
+  subtitle: "TU ESPECIALIDAD",
+  
+  // Información personal
+  personalInfo: {
+    name: "Tu título profesional",
+    location: "Tu ubicación",
+    experience: "Años de experiencia",
+    email: "tu@email.com",
+    phone: "tu teléfono",
+  },
+  
+  // Información adicional con rotación
+  additionalInfo: [
+    {
+      label: "Especialidades",
+      value: "Tus tecnologías",
+      rotation: 0 // Grados de rotación
+    },
+    // Agrega más elementos...
+  ],
+  
+  // Datos de contacto
+  contactInfo: {
+    email: "tu@email.com",
+    linkedin: "tu-linkedin",
+    github: "tu-github",
+    website: "tu-sitio-web"
+  }
+};
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Personalizar estilos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Los estilos principales están en:
+- `src/app/globals.css` - Estilos globales
+- `src/app/page.tsx` - Estilos del componente principal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Modificar posiciones y rotaciones
 
-## Deploy on Vercel
+En `src/app/page.tsx` puedes ajustar:
+- Posiciones de elementos (top, left, right, bottom)
+- Rotaciones de texto
+- Tamaños de fuente
+- Colores y espaciados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Responsive Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El diseño se adapta automáticamente a:
+- **Desktop**: Textos grandes, posicionamiento absoluto
+- **Mobile**: Textos ajustados, reorganización de elementos
+
+## 🎭 Animaciones
+
+Utiliza Framer Motion para:
+- Aparición progresiva de elementos
+- Rotaciones suaves
+- Transiciones de página
+- Efectos de hover
+
+## 🛠️ Tecnologías
+
+- **Next.js 15** - Framework React
+- **TypeScript** - Tipado estático
+- **Tailwind CSS 4** - Estilos utilitarios
+- **Framer Motion** - Animaciones
+- **GSAP** - Animaciones avanzadas
+
+## 📄 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── data/
+│   │   └── content.ts      # Contenido editable
+│   ├── globals.css         # Estilos globales
+│   ├── layout.tsx          # Layout principal
+│   └── page.tsx            # Página principal
+├── components/
+│   └── RotatedText.tsx     # Componente de texto rotado
+```
+
+## 🎯 Personalización rápida
+
+1. **Cambiar nombre**: Modifica `mainTitle` en `content.ts`
+2. **Cambiar especialidad**: Modifica `subtitle` en `content.ts`
+3. **Actualizar contacto**: Modifica `contactInfo` en `content.ts`
+4. **Agregar información**: Añade elementos a `additionalInfo`
+5. **Cambiar colores**: Modifica las clases de Tailwind en `page.tsx`
+
+## 📦 Despliegue
+
+```bash
+npm run build
+npm start
+```
+
+O despliega en Vercel:
+```bash
+vercel --prod
+```
+
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas! Siéntete libre de:
+- Reportar bugs
+- Sugerir mejoras
+- Enviar pull requests
+
+## 📄 Licencia
+
+MIT License - Úsalo libremente para tus proyectos personales y comerciales.
